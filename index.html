@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="box1">
+<div class="login-area">
+    <div class="row2">
+        <div >
+            <div class="center login-name">Login</div>   
+        </div>
+        <div >
+            <div class="input-box"> User Name :&nbsp; <input type="text" name="fname" id="fname" placeholder="abc@gmail.com">
+                <br>
+               
+
+        </div>
+        <p id="demo"></p></div>
+        
+        <div >
+            <div class="input-box"> Password &nbsp;&nbsp;:&nbsp;<input type="text" name="lname" id="lname" placeholder="Abc1234@" ><br>
+                
+        </div>
+        <p id="demo2"></p></div>
+        <div > 
+            <button class="primary-button button " onclick="fun()" name="submit" >Submit</button></div>
+    </div>
+
+</div>
+
+    </main>
+    <script>
+
+        function fun(){
+
+          var val = document.getElementById("fname").value;
+        
+            if(val.indexOf("@")===-1){
+               
+                document.getElementById("demo").innerHTML="Its not valid input";
+            }
+            else{
+                document.getElementById("demo").innerHTML="Its valid input";
+            }
+            // password velidation
+
+            var val2 = document.getElementById("lname").value;
+            
+            if(val2 === ""){
+               document.getElementById("demo2").innerHTML="Fill the password";
+               return false;
+             }
+            if(val2.length < 8){
+               document.getElementById("demo2").innerHTML="password mus conatons 8 char";
+               return fasle;
+             }
+              let special=false;
+              let small=false;
+              let capital=false;
+              let numb=false;
+
+              let z=[...val2];
+              for(i=0;i<z.length;i++){
+                  if(z[i]>='a'&&z[i]<='z'){
+                      small=true;
+                  }
+                  else if(z[i]>='A'&&z[i]<='Z'){
+                      capital=true;
+                  }
+                  else if(z[i]>='0'&&z[i]<='9'){
+                      numb=true;
+                  }
+                  else{
+                      special=true;
+                  }
+                 
+              }
+              if(special&&small&&capital&&numb){
+                document.getElementById("demo2").innerHTML="WOW YOur pasword is strong";
+                return fasle;
+              }
+              else{
+                  if(small===false){
+                    document.getElementById("demo2").innerHTML="Plese enter a small letter";
+                    return fasle;
+
+                  }
+                  if(capital===false){
+                    document.getElementById("demo2").innerHTML="Plese enter a Capital letter";
+                    return fasle;
+
+                  }
+                  if(numb===false){
+                    document.getElementById("demo2").innerHTML="Plese enter a number letter";
+                    return fasle;
+
+                  }
+                  if(special===false){
+                    document.getElementById("demo2").innerHTML="Plese enter a special letter";
+                    return fasle;
+
+                  }
+
+              }
+
+
+        }
+    </script>
+</body>
+</html>

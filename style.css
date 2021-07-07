@@ -1,0 +1,107 @@
+body{
+    background-image: url(https://picsum.photos/4180/3760); 
+    padding-left: 30px;
+    height: 90%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+   
+}
+.login-name{
+    margin: 0%;                                                                                                                                                                                                                                                      
+    padding: 4px 4px;
+    font:normal 800 30px/40px whitesmoke;
+}
+.box1{
+    padding: 12rem 30rem;
+}
+input{
+    padding: 10px;
+   margin-top: 10px;
+}
+p{
+    margin: 0%;
+    padding: 0%;
+    font-weight: 500;
+}
+.button{
+    height:auto;             
+    padding:.8rem 2.2rem;
+    font: normal 500 16px/20px whitesmoke;
+    margin: 70px 50px;
+    position: fixed; 
+    top: 55vh;
+    left: 43%;
+    border: 2px solid white;
+    border-radius: 20px;
+    justify-items: center;
+}
+.button.primary-button{
+    background:transparent;
+    background-clip: padding-box;
+    color: whitesmoke;
+    transition: background .6s ease;
+    box-shadow: whitesmoke;
+}
+.button.primary-button:hover{
+    background: whitesmoke;
+    background-clip: padding-box;
+    color: black;
+}
+.button.primary-button::after{
+    
+    position: relative;
+    top: -2px; left: -2px;
+    bottom: -2px; right: -2px;
+    background:transparent;
+    content:'';
+    z-index: -1;
+    border-radius: 4px;
+}
+.row2{
+   
+    height: 300px;
+    padding:.8rem 2.2rem;
+    font: normal 500 16px/20px whitesmoke;
+    margin-left: 10px 10px;
+    position: fixed;
+    border: 2px solid whitesmoke;
+    outline: none;
+    border-radius: 12px;
+    text-align: center;
+    justify-content: center;
+    justify-items: right;
+}
+.row2{
+    background-color: rgba(0,0,0,0.5);
+    
+    background-clip: padding-box;
+    color: whitesmoke;
+    /* transition: background .6s ease; */
+    box-shadow: whitesmoke 1sec ease;
+    opacity: 1;
+}
+ 
+.row{
+    margin:0;
+    padding:0;
+    width: 33%;
+
+}
+.input-box{
+    font:normal 500 16px/20px whitesmoke;
+}
+input{
+    border-radius: 100px;
+    border: 2px solid #fff;
+
+}
+.input-box:focus{
+    border-radius: 100px;
+    border: 2px solid #fff;
+}
+input:focus{
+    /* background-color: pink; */
+    border: 2px solid #fff;
+}
