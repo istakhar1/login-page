@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>page2</title>
+    <style>
+        p{
+            font-size:100px;
+            font-family:Georgia, 'Times New Roman', Times, serif;
+            font-weight: 700;
+            color: rebeccapurple;
+        }
+        body{
+            background: violet;
+        }
+    </style>
+</head>
+<body>
+    <p id="display"> hjkhaflksajflkdhalsdjhlsfh</p>
+    <script>
+        window.addEventListener('load',()=>{
+            const name=localStorage.getItem("NAME");
+            var s="";
+            for(var i=0;i<name.length;i++){
+                if(name[i]==='@'){
+                    break;
+                }
+                else{
+                    s+=name[i];
+                }
+            }
+            s='Hi '+s;
+            document.getElementById("display").innerHTML=s;
+        });
+    </script>
+</body>
+</html>

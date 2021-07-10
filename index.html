@@ -8,9 +8,11 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <button style="float:right" class="login">login</button>
     <main class="box1">
+        
 <div class="login-area">
-    <div class="row2">
+    <div class="row2" id="openbar">
         <div >
             <div class="center login-name">Login</div>   
         </div>
@@ -23,12 +25,14 @@
         <p id="demo"></p></div>
         
         <div >
-            <div class="input-box"> Password &nbsp;&nbsp;:&nbsp;<input type="text" name="lname" id="lname" placeholder="Abc1234@" ><br>
+            <div class="input-box">  Password &nbsp;&nbsp;:&nbsp;<input type="password" name="lname" id="lname"  placeholder="Abc1234@" class="pass" ><br>
+                <button class="check" onclick="showpass()">show password</button>
+                <button onclick="document.getElementById('fname').value = ''; document.getElementById('lname').value = '';">Clear</button>
                 
         </div>
         <p id="demo2"></p></div>
         <div > 
-            <button class="primary-button button " onclick="fun()" name="submit" >Submit</button></div>
+            <button id="myButton" class="primary-button button " onclick="fun()" name="submit" >Submit</button></div>
     </div>
 
 </div>
@@ -36,17 +40,49 @@
     </main>
     <script>
 
+
+        // on 
+
+
+        const ttt = document.querySelector('.pass');
+        function showpass(){
+           if(ttt.type==="password"){
+            ttt.type="text";
+           }
+           else{
+            ttt.type="password";
+           }
+        }
+
+        const photoEl = document.querySelector('.login');
+        const openbar1 = document.getElementById('openbar');
+
+        photoEl.addEventListener('click',function(){
+
+if(openbar1.style.display ==="none"){
+      
+    openbar1.style.display="block";
+  }
+  else{
+      openbar1.style.display="none";
+  }
+  return false;
+
+});
+
+
+// validation
         function fun(){
+            //     //  value set tpo local storage
+              const namef=document.getElementById("fname").value;
+            // const namef="hello i m ansari";
+              console.log(namef);
+                localStorage.setItem("NAME",namef);
+
 
           var val = document.getElementById("fname").value;
         
-            if(val.indexOf("@")===-1){
-               
-                document.getElementById("demo").innerHTML="Its not valid input";
-            }
-            else{
-                document.getElementById("demo").innerHTML="Its valid input";
-            }
+           
             // password velidation
 
             var val2 = document.getElementById("lname").value;
@@ -57,7 +93,7 @@
              }
             if(val2.length < 8){
                document.getElementById("demo2").innerHTML="password mus conatons 8 char";
-               return fasle;
+               return false;
              }
               let special=false;
               let small=false;
@@ -80,33 +116,49 @@
                   }
                  
               }
-              if(special&&small&&capital&&numb){
+              if(val.indexOf("@")===-1){
+               
+               document.getElementById("demo").innerHTML="Its not valid input";
+           }
+           else{
+               document.getElementById("demo").innerHTML="Its valid input";
+               if(special&&small&&capital&&numb){
                 document.getElementById("demo2").innerHTML="WOW YOur pasword is strong";
-                return fasle;
+
+                document. getElementById("myButton"). onclick = function () {
+                location. href = "./page2.html";
+                };
+
+
+
+
+                return false;
               }
               else{
                   if(small===false){
                     document.getElementById("demo2").innerHTML="Plese enter a small letter";
-                    return fasle;
+                    return false;
 
                   }
                   if(capital===false){
                     document.getElementById("demo2").innerHTML="Plese enter a Capital letter";
-                    return fasle;
+                    return false;
 
                   }
                   if(numb===false){
                     document.getElementById("demo2").innerHTML="Plese enter a number letter";
-                    return fasle;
+                    return false;
 
                   }
                   if(special===false){
                     document.getElementById("demo2").innerHTML="Plese enter a special letter";
-                    return fasle;
+                    return false;
 
                   }
 
               }
+           }
+              
 
 
         }
