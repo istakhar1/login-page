@@ -31,7 +31,7 @@ p{
     font: normal 500 16px/20px whitesmoke;
     margin: 70px 50px;
     position: fixed; 
-    top: 55vh;
+    top: 60vh;
     left: 43%;
     border: 2px solid white;
     border-radius: 20px;
@@ -88,9 +88,12 @@ p{
 }
  
 .row{
+    margin-left: 28%;
     margin:0;
     padding:0;
     width: 33%;
+    border-radius: 20px;
+    background-color: rgba(139, 189, 212, 0.5);
 
 }
 .input-box{
@@ -108,4 +111,22 @@ input{
 input:focus{
     /* background-color: pink; */
     border: 2px solid #fff;
+}
+.radio{
+    color: red;
+}
+label{
+    size: 10px;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-content: center;
+}
+.quiz ,.login{
+    width: 80px;
+    height: 30px;
+    background: rgb(76, 216, 76);
+    border-radius: 10px;
 }

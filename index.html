@@ -8,8 +8,64 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <button style="float:right" class="login">login</button>
+   
+    <header style="width: 100%;">
+      <div class="container" style=" display: flex; flex-direction: row; justify-content: space-between; align-items:flex-start;">   
+      <div><button class="quiz"> Quiz</button></div>
+      <div> <button style="float:right" class="login">login</button></div>
+    </div>
+    </header>
+    <div id="qnbar" class="container" >
+      <div class="row" style="padding: 20px 20px; border-color: 2px solid black; width: 500px; height: 200px;">
+        
+        <p><param name="" value="">Who is PM of india ?</p>
+        <input type="radio" id="op1" name="qn1" class="qn1" value="op1">
+        <label for="op1" id="l1" >N modi</label><br>
+        <input type="radio" id="op2" name="qn1" class="qn1" value="op2">
+        <label for="op2" id="l2">gandhi</label><br>
+        <input type="radio" id="op3" name="qn1" class="qn1" value="op3">
+        <label for="op3" id="l3">dhoni</label> <br>
+        <input type="radio" id="op4" name="qn1" class="qn1" value="op4">
+        <label for="op4" id="l4">virat</label>
+
+      </div> <br>
+      <div class="row" style=" padding: 20px 20px; border-color: 2px solid black; width: 500px; height: 200px;">
+        
+        <p><param name="" value="">Capital of india ?</p>
+        <input type="radio" id="op21" name="qn2" value="op21" style="color:red;">
+        <label for="op21" id="l21">Delhi</label><br>
+        <input type="radio" id="op22" name="qn2" value="op22">
+        <label for="op22" id="l22">mumbai</label><br>
+        <input type="radio" id="op23" name="qn2" value="op23">
+        <label for="op23" id="l23">kolkata</label> <br>
+        <input type="radio" id="op24" name="qn2" value="op24">
+        <label for="op24" id="l24">jharkhand</label>
+
+      </div> <br>
+      <div class="row" style=" padding: 20px 20px; border-color: 2px solid black; width: 500px; height: 200px;">
+        
+        <p><param name="" value="">name of our planet ?</p>
+        <input type="radio" id="op31" name="qn3" value="op31"  >
+        <label for="op31"  id="l31">sun</label><br>
+        <input type="radio" id="op32" name="qn3" value="op32" >
+        <label for="op32" id="l32">moon</label><br>
+        <input type="radio" id="op33" name="qn3" value="op33" style="color:red;">
+        <label for="op33" id="l33">Earth</label> <br>
+        <input type="radio" id="op34" name="qn3" value="op34">
+        <label for="op34" id="l34">venus</label>
+
+      </div> <br>
+    
+      <div  style="width: 500px; display: flex; flex-direction: column; justify-content: center;align-items: center;">
+         <button onclick="result()" style="display: block;" >submit</button><br>
+         <h2 id="result" style="color: green; display: block;"></h2><br>
+         <h2 id="result2" style="color: red; display: block;"></h2>
+      </div>
+    </div>  
     <main class="box1">
+   
+      
+      
         
 <div class="login-area">
     <div class="row2" id="openbar">
@@ -54,6 +110,120 @@
            }
         }
 
+
+        //quiz bar open
+        const quiz1 = document.querySelector('.quiz');
+        const qnbar1 = document.getElementById('qnbar');
+
+        quiz1.addEventListener('click',function(){
+
+if(qnbar1.style.display ==="none"){
+      
+  qnbar1.style.display="block";
+  }
+  else{
+    qnbar1.style.display="none";
+  }
+  return false;
+
+});
+
+        //quiz bar end
+//sumbit button
+
+function result(){
+  let ans=0;
+  if(document.getElementById('op1').checked){
+    const v1=document.getElementById('l1');
+    v1.style.color="green";
+    ans++;
+  }
+  else{
+    if(document.getElementById('op2').checked){
+    const v1=document.getElementById('l2');
+    v1.style.color="red";
+  }
+  if(document.getElementById('op3').checked){
+    const v1=document.getElementById('l3');
+    v1.style.color="red";
+  }
+  if(document.getElementById('op4').checked){
+    const v1=document.getElementById('l4');
+    v1.style.color="red";
+  }
+
+  }
+
+  //second
+  if(document.getElementById('op21').checked){
+    const v1=document.getElementById('l21');
+    v1.style.color="green";
+    ans++;
+  }
+  else{
+    if(document.getElementById('op22').checked){
+    const v1=document.getElementById('l22');
+    v1.style.color="red";
+  }
+  if(document.getElementById('op23').checked){
+    const v1=document.getElementById('l23');
+    v1.style.color="red";
+  }
+  if(document.getElementById('op24').checked){
+    const v1=document.getElementById('l24');
+    v1.style.color="red";
+  }
+
+  }
+
+  //third
+  if(document.getElementById('op33').checked){
+    const v1=document.getElementById('l33');
+    v1.style.color="green";
+    ans++;
+  }
+  else{
+    if(document.getElementById('op31').checked){
+    const v1=document.getElementById('l31');
+    v1.style.color="red";
+  }
+  if(document.getElementById('op32').checked){
+    const v1=document.getElementById('l32');
+    v1.style.color="red";
+  }
+  if(document.getElementById('op34').checked){
+    const v1=document.getElementById('l34');
+    v1.style.color="red";
+  }
+
+  }
+
+  
+     document.getElementById("op1").disabled = true;
+    document.getElementById("op2").disabled = true;
+    document.getElementById("op3").disabled = true;
+    document.getElementById("op4").disabled = true;
+    document.getElementById("op21").disabled = true;
+    document.getElementById("op22").disabled = true;
+    document.getElementById("op23").disabled = true;
+    document.getElementById("op24").disabled = true;
+    document.getElementById("op31").disabled = true;
+    document.getElementById("op32").disabled = true;
+    document.getElementById("op33").disabled = true;
+    document.getElementById("op34").disabled = true;
+
+  document.getElementById("result").innerHTML="correct ans is: " + ans;
+  document.getElementById("result2").innerHTML="wrong ans is: " + (3 - ans);
+  return false;
+}
+
+
+
+
+//sumbit button
+
+
+
         const photoEl = document.querySelector('.login');
         const openbar1 = document.getElementById('openbar');
 
@@ -76,7 +246,7 @@ if(openbar1.style.display ==="none"){
             //     //  value set tpo local storage
               const namef=document.getElementById("fname").value;
             // const namef="hello i m ansari";
-              console.log(namef);
+              // console.log(namef);
                 localStorage.setItem("NAME",namef);
 
 
