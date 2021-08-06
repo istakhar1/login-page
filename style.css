@@ -14,7 +14,7 @@ body{
     font:normal 800 30px/40px whitesmoke;
 }
 .box1{
-    padding: 12rem 30rem;
+    padding: 10rem 30rem;
 }
 input{
     padding: 10px;
@@ -31,7 +31,7 @@ p{
     font: normal 500 16px/20px whitesmoke;
     margin: 70px 50px;
     position: fixed; 
-    top: 60vh;
+    top: 55vh;
     left: 42%;
     border: 2px solid white;
     border-radius: 20px;
